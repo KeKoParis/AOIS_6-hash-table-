@@ -28,6 +28,34 @@ func main() {
 	fmt.Printf("\"bear\" hash: %d	index: %d \n", ht.Hash("bear"), ht.Hash("bear")%20)
 	fmt.Printf("Hash \"primate\" %d	index: %d \n", ht.Hash("primate"), ht.Hash("bear")%20)
 	for i := listBear.Front(); i != nil; i = i.Next() {
-		fmt.Println(i.Value)
+		fmt.Println("- ", i.Value)
+	}
+
+	table.Delete("primate", "gibbons")
+
+	listBear = table.Get("bear")
+	fmt.Printf("\"bear\" hash: %d	index: %d \n", ht.Hash("bear"), ht.Hash("bear")%20)
+	fmt.Printf("Hash \"primate\" %d	index: %d \n", ht.Hash("primate"), ht.Hash("bear")%20)
+	for i := listBear.Front(); i != nil; i = i.Next() {
+		fmt.Println("- ", i.Value)
+	}
+
+	listBear = table.Get("squirrel")
+	fmt.Printf("\"squirrel\" hash: %d	index: %d \n", ht.Hash("squirrel"), ht.Hash("squirrel")%20)
+	for i := listBear.Front(); i != nil; i = i.Next() {
+		fmt.Println("- ", i.Value)
+	}
+
+	listBear = table.Get("hedgehog")
+	fmt.Printf("\"hedgehog\" hash: %d	index: %d \n", ht.Hash("hedgehog"), ht.Hash("hedgehog")%20)
+	for i := listBear.Front(); i != nil; i = i.Next() {
+		fmt.Println("- ", i.Value)
+	}
+
+	table.Delete("hedgehog", "amur")
+	listBear = table.Get("hedgehog")
+	fmt.Printf("\"hedgehog\" hash: %d	index: %d \n", ht.Hash("hedgehog"), ht.Hash("hedgehog")%20)
+	for i := listBear.Front(); i != nil; i = i.Next() {
+		fmt.Println("- ", i.Value)
 	}
 }

@@ -42,7 +42,7 @@ func (ht *HashTable) Delete(key string, value string) {
 
 	if ht.collisions[tableIndex] == true {
 		foundElement, isError := findElement(&(*ht.pointers[tableIndex]), value)
-		if isError == nil {
+		if foundElement == nil {
 			panic(isError)
 		}
 		(*ht.pointers[tableIndex]).Remove(foundElement)
